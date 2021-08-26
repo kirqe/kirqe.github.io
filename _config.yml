@@ -1,0 +1,33 @@
+markdown: kramdown
+kramdown:
+  extensions:
+    - autolink
+    - footnotes
+    - smart
+
+permalink: /posts/:title
+
+gems:
+  - jekyll-sitemap
+
+name: Kirill Beletskiy
+url: https://kirqe.be
+baseurl: ""
+description: Blog for notes and stuff...
+email: kirqe@yahoo.com
+tg: https://t.me/kirqe
+
+disqus:
+  shortname: "kirqe"
+github:
+  un: kirqe
+  owner_url: https://github.com/kirqe
+  owner_gravatar_url: https://avatars2.githubusercontent.com/u/5272402?v=3&s=460
+stack_overflow: http://stackoverflow.com/users/1231365/kirqe
+linked_in: https://www.linkedin.com/in/kirill-beletskiy-63a948102
+dribbble: https://dribbble.com/kirqe
+twitter: railsr7
+
+google_analytics_tracking_id: UA-55372257-1
+
+exclude: [".gitignore", "README.md", "Gemfile", "Gemfile.lock"]

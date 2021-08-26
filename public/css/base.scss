@@ -1,0 +1,272 @@
+---
+#
+---
+@charset "UTF-8";
+
+body {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  margin: 0;
+  // -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: #8888E4;
+}
+
+.nav, .content{
+  max-width: 700px;
+}
+
+.nav {
+  // position: relative;
+  height: 30px;
+  // margin: 0 15px;
+  margin: 0 15px 15px 15px;
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0;
+  // border-bottom: 2px dashed #eee;
+
+  .avatar {
+    border-radius: 3px;
+    margin-right: 10px;
+  }
+
+  a {
+    color: #586777;
+  }
+
+  .section {
+    display: flex;
+    align-items: center;
+    &.left {
+      flex-grow: 1;
+      a {
+        // helps with aligning img with text in the same container
+        display: flex;
+      }
+    }
+    &.right {
+
+    }
+  }
+
+  ul {
+    padding: 0;
+
+    li {
+      list-style: none;
+      display: inline-block;
+      margin-left: 5px;
+    }
+  }
+}
+
+// SO <3
+.nav {
+  --p:10px; /* width of the pattern */
+  --w:4px;  /* width of the gap inside the pattern */
+  --h:2px;  /* height of line */
+
+  background: 
+    repeating-linear-gradient(90deg, #8888E4 0 calc(100% - var(--w)), transparent 0 100%) 0 100% / var(--p) var(--h) repeat-x;
+    // repeating-linear-gradient(90deg, #8888E4 0 calc(100% - var(--w)), #5656e6 0 100%) 0 100% / var(--p) var(--h) repeat-x;    
+  animation: move 0.3s linear infinite;
+}
+
+@keyframes move {
+  to {
+    background-position: var(--p) 100%;
+  }
+}
+
+
+.content {
+  color: #586777;
+
+  margin: 0 15px 0 15px;
+  margin-bottom: 50px;
+  h1, h2, h3, h4 {
+    color: #586777;;
+    font-family: "Yanone Kaffeesatz", Helvetica, sans-serif;
+    //font-family:  Helvetica, sans-serif;
+    font-weight: 400;
+    a {
+      color: #586777;
+      text-decoration: none;
+    }
+  }
+  h1 {
+    font-size: 36px;
+    margin: 18px 0 5px 0;
+  }
+  h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+  h3 {
+    color: #586777;
+    font-size: 25px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 1.2em;
+    margin-top: 0;
+    margin-bottom: 1.2em;
+    line-height: 1.5em;
+    code {
+      font-size: 0.8em;
+      background-color: #B7B7E6;
+      color: #fff;
+      // border: 1px solid #777777;
+      border-radius: 3px;
+      padding: 3px 4px;
+    }
+  }
+  img {
+    //padding: 3px;
+    //border: 1px solid #eeeeee;
+    max-width: 100%;
+  }
+  hr {
+    border: 0;
+    height: 6px;
+    background: repeating-radial-gradient( circle, #8888E4, #8888E4 10px, #8888E4 10px, #8888E4 20px );
+    margin: 2em 3em;
+  }
+  li {
+    margin-bottom: 10px;
+    line-height: 1.4em;
+  }
+  blockquote {
+    // font-style: italic;
+    font-size: 14px;
+    padding: .25em 1em;
+    margin: 1em 1em 0 1em;
+    color: #586777;
+    cite {
+      &:before {
+        content: '— ';
+      }
+      display: block;
+      margin-top: .5em;
+      text-align: right;
+      color: #111;
+      font-style: normal;
+    }
+  }
+  .byline {
+    margin-bottom: 17px;
+    font-family: "Yanone Kaffeesatz", Helvetica, sans-serif;
+    //font-family: Helvetica, sans-serif;
+    padding-left: 0px;
+    font-size: 1em;
+    color: #586777;
+  }
+  .aside {
+    background-color: #eeeeee;
+    padding: 14px;
+    font-size: 14px;
+    margin: 5px 0 15px 0;
+    font-family: Helvetica, sans-serif;
+    line-height: 1.6em;
+  }
+  .listing {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, sans-serif;
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      font-size: .9em;
+      list-style: none;
+      padding: 5px 0;
+      margin: 0;
+      color: #586777;
+      border-bottom: 1px solid #eee;
+
+      span {
+        float: right;
+      }
+    }
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .meta {
+    margin: 30px 0;
+    padding: 10px 0;
+    font-family: Helvetica, sans-serif;
+    p {
+      line-height: 1.4;
+      font-size: 14px;
+      margin-top: 0px;
+    }
+    img {
+      position: relative;
+      float: left;
+      margin-top: 0px;
+      margin-right: 10px;
+      margin-left: -60px;
+      border-radius: 4px;
+    }
+    .copy {
+      padding-left: 60px;
+    }
+    iframe {
+      padding-left: 5px;
+    }
+  }
+  .talk-design .color {
+    div {
+      float: left;
+      margin-right: 10px;
+      padding: 5px 15px;
+      border: 1px solid #000;
+      font-family: Helvetica, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .white {
+      color: #fff;
+    }
+  }
+}
+
+
+
+.content.wut {
+  ul.wut-list {
+    list-style: none;
+    padding: 0;
+    li.list-item {
+      line-height: 1rem;
+      .header {
+        color: #586777;;
+        font-family: "Yanone Kaffeesatz", Helvetica, sans-serif;
+        font-weight: 400;
+        text-decoration: none;
+        margin-bottom: .5rem;
+        display: block;
+      }
+      .text {
+        color: #7a8999; font-size: 1rem;
+      }
+      .themes {
+        display: grid;
+        grid-template-columns: repeat(4, 150px);
+        grid-gap: 10px;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  
+
+
+}

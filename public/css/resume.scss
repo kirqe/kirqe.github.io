@@ -1,0 +1,43 @@
+---
+#
+---
+
+.resume{
+  // border-top: 8px solid #2196F3;
+
+  .content{
+    max-width: 650px;
+    margin-left: 100px;
+    display: block;
+    h1, h2, h3, h4 {
+      color: #333;
+      font-family: Helvetica, sans-serif;
+      font-style: normal;
+    }
+    p{
+      margin-bottom: 16px;
+    }
+    ul{
+      list-style: none;;
+      li{
+        line-height: 14px;
+        &:before{
+          font-family: 'FontAwesome';
+          content: "\f0da";
+          margin:0 5px 0 -15px;
+
+        }
+      }
+    }
+  }
+
+  .res-links{
+    margin: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    a{
+      font-size: 12px;
+    }
+  }
+}
