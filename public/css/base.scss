@@ -6,7 +6,6 @@
 body {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   margin: 0;
-  // -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -68,9 +67,8 @@ a {
   --w:4px;  /* width of the gap inside the pattern */
   --h:2px;  /* height of line */
 
-  background: 
+  background:
     repeating-linear-gradient(90deg, #8888E4 0 calc(100% - var(--w)), transparent 0 100%) 0 100% / var(--p) var(--h) repeat-x;
-    // repeating-linear-gradient(90deg, #8888E4 0 calc(100% - var(--w)), #5656e6 0 100%) 0 100% / var(--p) var(--h) repeat-x;    
   animation: move 0.3s linear infinite;
 }
 
@@ -141,7 +139,7 @@ a {
   }
   blockquote {
     // font-style: italic;
-    font-size: 14px;
+    // font-size: .9em;
     padding: .25em 1em;
     margin: 1em 1em 0 1em;
     color: #586777;
@@ -152,7 +150,7 @@ a {
       display: block;
       margin-top: .5em;
       text-align: right;
-      color: #111;
+      color: #8888E4;
       font-style: normal;
     }
   }
@@ -266,7 +264,7 @@ a {
       }
     }
   }
-  
+
 
 
 }
