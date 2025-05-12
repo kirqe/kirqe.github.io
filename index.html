@@ -3,6 +3,57 @@ layout: default
 title: "Me"
 ---
 
-<section class="content">
+<!-- <section class="content">
+  <div class="intro">
+    <h1>Hello, I'm <span class="highlight">Your Name</span></h1>
+    <p>
+      This is my little corner of the internet where I share my thoughts, projects, and notes on various technical topics.
+      I'm interested in [your interests here] and currently work as a [your profession].
+    </p>
+  </div>
 
-</section>
+  <div class="section-divider"></div>
+
+  <div class="content-section recent-posts">
+    <h2>Recent Posts</h2>
+    <ul class="simple-list">
+      {% assign displayed_posts = 0 %}
+      {% for post in site.posts %}
+        {% unless post.draft or post.categories contains 'tldr' %}
+          {% if displayed_posts < 3 %}
+            <li>
+              <a href="{{ post.url }}">{{ post.title }}</a>
+              <span class="description">{{ post.date | date: "%B %e, %Y" }}</span>
+            </li>
+            {% assign displayed_posts = displayed_posts | plus: 1 %}
+          {% endif %}
+        {% endunless %}
+      {% endfor %}
+    </ul>
+    <p class="see-more"><a href="/posts.html">see more</a></p>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <div class="content-section projects-section">
+    <h2>Projects</h2>
+    <ul class="simple-list">
+      {% for project in site.data.projects %}
+        {% if project.pinned %}
+        <li>
+          <a href="/projects.html#{{ project.id }}">{{ project.title }}</a>
+          <span class="description">{{ project.description }}</span>
+          {% if project.technologies %}
+          <div class="list-tags">
+            {% for tech in project.technologies limit:3 %}
+              <span class="list-tag">{{ tech }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+    <p class="see-more"><a href="/projects.html">see more</a></p>
+  </div>
+</section> -->

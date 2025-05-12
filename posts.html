@@ -4,11 +4,15 @@ title: "Posts"
 ---
 
 <section class="content">
-  <ul class="listing">
+  <h1>All Posts</h1>
+  <p class="posts-intro">A chronological archive of all my blog posts.</p>
+
+  <ul class="simple-list">
     {% for post in site.posts %}
     {% unless post.draft or post.categories contains 'tldr' %}
     <li>
-      <span>{{ post.date | date: "%B %e, %Y" }}</span> <a href="{{ post.url }}">{{ post.title }}</a>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      <span class="description">{{ post.date | date: "%B %e, %Y" }}</span>
     </li>
     {% endunless %}
     {% endfor %}

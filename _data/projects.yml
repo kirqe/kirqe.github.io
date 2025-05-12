@@ -1,0 +1,30 @@
+# - id: project2
+#   title: Project 2
+#   description: An elegant solution to a complex problem.
+#   full_description: |
+#     Detailed description of your second project. Explain what it does, why you created it,
+#     the technologies used, and any challenges you faced.
+
+#     You can include multiple paragraphs to fully explain the project.
+#   live_url: https://example.com/project2
+#   source_url: https://github.com/username/project2
+#   technologies:
+#     - JavaScript
+#     - React
+#     - Node.js
+#   screenshot: /public/images/projects/placeholder-wide.png
+#   icon: /public/images/projects/placeholder.jpg
+#   pinned: true
+
+# - id: project3
+#   title: Project 3
+#   description: A smaller utility that serves a specific purpose.
+#   full_description: |
+#     Detailed description of your third project. This one isn't pinned to the homepage,
+#     but still appears on the projects page.
+#   source_url: https://github.com/username/project3
+#   technologies:
+#     - Python
+#     - Flask
+#   screenshot: /public/images/projects/placeholder-wide.png
+#   pinned: true

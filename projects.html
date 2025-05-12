@@ -1,0 +1,50 @@
+---
+layout: default
+title: "Projects"
+---
+
+<section class="content">
+  <h1>Projects</h1>
+  <p class="posts-intro">A showcase of my personal and professional projects.</p>
+
+  <div class="projects-list">
+    {% for project in site.data.projects %}
+    <div id="{{ project.id }}" class="project-entry">
+      <h2>{{ project.title }}</h2>
+
+      <div class="project-meta">
+        {% if project.technologies %}
+        <div class="project-tags">
+          {% for tech in project.technologies %}
+          <span class="project-tag">{{ tech }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="project-links">
+          {% if project.live_url %}
+          <a href="{{ project.live_url }}" target="_blank" class="project-link">View Live</a>
+          {% endif %}
+          {% if project.source_url %}
+          <a href="{{ project.source_url }}" target="_blank" class="project-link">Source Code</a>
+          {% endif %}
+        </div>
+      </div>
+
+      {% if project.screenshot %}
+      <div class="project-screenshot">
+        <img src="{{ project.screenshot }}" alt="{{ project.title }} screenshot">
+      </div>
+      {% endif %}
+
+      <div class="project-description">
+        {{ project.full_description | markdownify }}
+      </div>
+    </div>
+
+    {% unless forloop.last %}
+    <div class="project-divider"></div>
+    {% endunless %}
+    {% endfor %}
+  </div>
+</section>
