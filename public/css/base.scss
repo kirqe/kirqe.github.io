@@ -12,6 +12,10 @@ body {
   margin: 0;
 }
 
+.page-shell {
+  min-height: calc(100vh - 120px);
+}
+
 a {
   color: #8888E4;
 }
@@ -79,18 +83,6 @@ a {
     }
   }
 
-  // Wave line for navbar
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: url('/public/images/wave.svg') repeat-x;
-    background-size: auto 100%;
-    z-index: 5;
-  }
 }
 
 .content {
@@ -722,60 +714,124 @@ a {
   }
 }
 
-.duck-container {
-  position: absolute;
-  top: 23px;
-  right: 200px;
-  z-index: 30;
-  animation: duck-bob 1.5s ease-in-out infinite;
+.waterline {
+  position: relative;
+  width: 100%;
+  height: 96px;
+  overflow: hidden;
+  margin-top: 10px;
+  pointer-events: none;
 
-  .duck-icon {
-    width: 30px;
-    height: 30px;
-    // opacity: 0.6;
-    transition: opacity 0.3s ease;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 24px;
+    background: rgba(136, 136, 228, 0.16);
+  }
 
-    // &:hover {
-    //   opacity: 1;
-    // }
+  .waterline-wave {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: url('/public/images/wave.svg') repeat-x;
+    background-size: 1440px 100%;
+    will-change: background-position;
+  }
+
+  .waterline-wave-back {
+    bottom: 7px;
+    height: 18px;
+    opacity: 0.4;
+    animation: water-wave-back 20s linear infinite;
+  }
+
+  .waterline-wave-front {
+    bottom: 0;
+    height: 22px;
+    opacity: 0.78;
+    animation: water-wave-front 14s linear infinite;
+  }
+
+  .waterline-duck {
+    position: absolute;
+    bottom: 12px;
+    left: clamp(50%, 62vw, 72%);
+    z-index: 20;
+    animation: duck-drift 6.5s ease-in-out infinite;
+    transform-origin: center 70%;
+
+    .duck-icon {
+      width: 54px;
+      height: 54px;
+      display: block;
+      animation: duck-bob 2.4s ease-in-out infinite;
+    }
   }
 }
 
-@keyframes duck-flight {
-  0% {
-    transform: translate3d(0, 0, 0);
+@keyframes water-wave-front {
+  from {
+    background-position: 0 0;
   }
-  25% {
-    transform: translate3d(-200px, 3px, 0);
+  to {
+    background-position: -1440px 0;
   }
-  50% {
-    transform: translate3d(-400px, 1px, 0);
+}
+
+@keyframes water-wave-back {
+  from {
+    background-position: -300px 0;
   }
-  75% {
-    transform: translate3d(-600px, 3px, 0);
-  }
-  100% {
-    transform: translate3d(-800px, 0, 0);
+  to {
+    background-position: -1740px 0;
   }
 }
 
 @keyframes duck-bob {
   0%, 100% {
-    margin-top: 0;
+    transform: translateY(0) rotate(-1deg);
   }
   25% {
-    margin-top: -1px;
-  }
-  30% {
-    margin-top: -1.5px;
+    transform: translateY(-3px) rotate(0.8deg);
   }
   50% {
-    margin-top: -2px;
-  }
-  60% {
-    margin-top: -1.5px;
+    transform: translateY(-5px) rotate(1.2deg);
   }
   75% {
-    margin-top: -1px;
+    transform: translateY(-2px) rotate(0deg);
+  }
+}
+
+@keyframes duck-drift {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  30% {
+    transform: translateX(10px);
+  }
+  70% {
+    transform: translateX(-8px);
+  }
+}
+
+@media (max-width: 700px) {
+  .page-shell {
+    min-height: calc(100vh - 110px);
+  }
+
+  .waterline {
+    height: 86px;
+
+    .waterline-duck {
+      left: clamp(52%, 64vw, 76%);
+
+      .duck-icon {
+        width: 46px;
+        height: 46px;
+      }
+    }
   }
 }
