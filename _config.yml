@@ -10,7 +10,7 @@ permalink: /posts/:title
 gems:
   - jekyll-sitemap
 
-name: Kirill Beletskiy
+name: kirqe
 url: https://kirqe.be
 baseurl: ""
 description: Blog for notes and stuff...

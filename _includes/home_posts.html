@@ -1,0 +1,30 @@
+{% assign post_limit = 4 %}
+{% assign shown_posts = 0 %}
+{% for post in site.posts %}
+  {% unless post.draft %}
+    {% assign shown_posts = shown_posts | plus: 1 %}
+  {% endunless %}
+{% endfor %}
+
+{% if shown_posts > 0 %}
+<section class="content home-feed">
+  <div class="home-section-head">
+    <h2 class="home-section-title">Posts</h2>
+  </div>
+  <ul class="home-collection">
+    {% assign displayed_posts = 0 %}
+    {% for post in site.posts %}
+      {% unless post.draft %}
+        {% if displayed_posts < post_limit %}
+        <li>
+          <a href="{{ post.url }}" class="home-item-title">{{ post.title }}</a>
+          <p class="home-item-description home-post-date">{{ post.date | date: "%B %e, %Y" }}</p>
+        </li>
+        {% assign displayed_posts = displayed_posts | plus: 1 %}
+        {% endif %}
+      {% endunless %}
+    {% endfor %}
+  </ul>
+  <p class="home-end-link"><a href="/posts.html">ALL POSTS</a></p>
+</section>
+{% endif %}

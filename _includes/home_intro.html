@@ -1,0 +1,6 @@
+{% assign home_content = site.data.home_content %}
+{% if home_content and home_content.intro %}
+<section class="content home-feed">
+  <p class="home-intro">{{ home_content.intro }}</p>
+</section>
+{% endif %}

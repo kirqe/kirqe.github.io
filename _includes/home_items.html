@@ -1,0 +1,22 @@
+{% assign home_items = site.data.home_items %}
+{% if home_items and home_items.size > 0 %}
+<section class="content home-feed">
+  <div class="home-section-head">
+    <h2 class="home-section-title">Links</h2>
+  </div>
+  <ul class="home-collection">
+    {% for item in home_items limit:6 %}
+    <li>
+      {% if item.url %}
+      <a href="{{ item.url }}" class="home-item-title">{{ item.title }}</a>
+      {% else %}
+      <span class="home-item-title">{{ item.title }}</span>
+      {% endif %}
+      {% if item.description %}
+      <p class="home-item-description">{{ item.description }}</p>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

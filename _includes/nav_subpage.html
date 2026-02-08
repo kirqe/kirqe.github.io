@@ -1,0 +1,15 @@
+<div class="sub-nav" id="nav">
+  {% assign crumbs = page.url | remove:'/index.html' | split:'/' %}
+  <a href="/">Home</a>
+  {% for crumb in crumbs offset: 1 %}
+    {% if forloop.last %}
+      <span class="sep">/</span>
+      <span class="current">{{ page.title | default: crumb | replace:'-',' ' | remove:'.html' | capitalize }}</span>
+    {% else %}
+      <span class="sep">/</span>
+      <a href="/{% assign crumb_limit = forloop.index | plus: 1 %}{% for c in crumbs limit: crumb_limit %}{% unless c == '' %}{{ c | append:'/' }}{% endunless %}{% endfor %}">
+        {{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}
+      </a>
+    {% endif %}
+  {% endfor %}
+</div>

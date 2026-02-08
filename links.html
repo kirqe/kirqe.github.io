@@ -1,0 +1,26 @@
+---
+layout: default
+title: "Links"
+---
+
+{% assign links = site.data.home_items %}
+<section class="content home-feed posts-feed">
+  {% if links and links.size > 0 %}
+  <ul class="home-collection">
+    {% for link_item in links %}
+    <li>
+      {% if link_item.url %}
+      <a href="{{ link_item.url }}" class="home-item-title">{{ link_item.title }}</a>
+      {% else %}
+      <span class="home-item-title">{{ link_item.title }}</span>
+      {% endif %}
+      {% if link_item.description %}
+      <p class="home-item-description">{{ link_item.description }}</p>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="posts-intro">No links listed yet.</p>
+  {% endif %}
+</section>

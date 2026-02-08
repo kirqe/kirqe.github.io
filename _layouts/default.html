@@ -3,7 +3,11 @@
 {% include head.html %}
 <body>
   <main class="page-shell">
-    {% include nav.html %}
+    {% if page.is_home %}
+      {% include nav_home.html %}
+    {% else %}
+      {% include nav_subpage.html %}
+    {% endif %}
     {{ content }}
   </main>
   {% include waterline.html %}
